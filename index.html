@@ -15,49 +15,58 @@
 </head>
 <body>
  <div class="container">
-     <div class="row">
-         <div class="col"></div>
-         <div class="col">
-             <img src="images/new-game.svg" alt="NewGame">
-             NEW GAME
-         </div>
-         <div class="col"></div>
+     <div class="pt-4 pb-5">
+         <a href="#" class="link-dark d-flex align-items-center justify-content-center buttons mt-4">
+             <img src="images/new-game.svg" alt="NewGame" class="buttonImg">&nbsp;&nbsp;NEW GAME
+         </a>
      </div>
-     <div class="row">
-         <div class="col">
-             <div>PLAYER 1</div>
-             <div>0</div>
+     <div class="row align-items-center">
+         <div class="col player1">
+             <div>PLAYER 1<img src="images/dot-turn.svg" alt="dotTurn" style="width: 8vw;"></div>
          </div>
-         <div class="col">
+         <div class="col player2">
+             <div><img src="images/dot-turn.svg" alt="dotTurn" style="width: 8vw;visibility: hidden;">PLAYER 2</div>
+             <div></div>
+         </div>
+     </div>
+     <div class="row row2 align-items-center">
+         <div class="col cumulateScore text-danger">
+             0
+         </div>
+         <div class="col-2">
              <img
-                 src="images/dice-6.svg"
-                 alt="Dice-6"
-                 height="87px"
-                 width="100px" />
+                     src="images/dice-6.svg"
+                     alt="Dice-6"
+                     style="width: 8vw;"/>
          </div>
-         <div class="col">
-             <div>PLAYER 2</div>
-             <div>0</div>
+         <div class="col cumulateScore text-danger">
+             0
          </div>
      </div>
-     <div class="row">
+     <div class="row row3">
          <div class="col">
-             <div>CURRENT</div>
-             <div>0</div>
-         </div>
-         <div class="col">
-             <div>
-                 <img src="images/roll.svg" alt="RollDice">
-                 ROLL DICE
-             </div>
-             <div>
-                 <img src="images/hold.svg" alt="Hold">
-                 HOLD
+             <div class="p-2 bg-danger d-inline-block current">
+                 <div class="currentText">CURRENT</div>
+                 <div class="currentScore text-white">0</div>
              </div>
          </div>
+         <div class="col-2">
+             <div class="mb-3">
+                 <a href="#" class="link-dark d-flex align-items-center justify-content-center buttons">
+                     <img src="images/roll.svg" alt="RollDice" class="buttonImg">&nbsp;&nbsp;ROLL DICE
+                 </a>
+             </div>
+             <div>
+                 <a href="#" class="link-dark d-flex align-items-center justify-content-center buttons">
+                     <img src="images/hold.svg" alt="Hold" class="buttonImg">&nbsp;&nbsp;HOLD
+                 </a>
+             </div>
+         </div>
          <div class="col">
-             <div>CURRENT</div>
-             <div>0</div>
+             <div class="p-2 bg-danger d-inline-block current">
+                 <div class="currentText">CURRENT</div>
+                 <div class="currentScore text-white">0</div>
+             </div>
          </div>
      </div>
  </div>

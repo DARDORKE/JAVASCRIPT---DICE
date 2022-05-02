@@ -31,39 +31,42 @@ a {
 
 }
 
-.player1 {
-    font-size: 3rem;
+.player {
+    font-size: 4.5vw;
     font-weight: 300;
 }
 
-.player2 {
-    font-size: 3rem;
-    font-weight: 200;
-}
-
 .cumulateScore {
-    font-size: 7rem;
+    font-size: 9vw;
     font-weight: 200;
 }
 
 .current {
-    font-size: 1.5rem;
-    width: 8rem;
+    font-size: 1.5vw;
+    width: 8vw;
 }
 
 .buttons {
-    font-size: 1.4rem;
+    font-size: 2vw;
 }
 
 .buttonImg {
-    width : 1.8rem
+    width : 2vw;
 }
 
 .currentText {
     font-weight: 300;
-    font-size: 1rem;
+    font-size: 1vw;
 }
 
 .currentScore {
-    font-size: 1.5rem;
+    font-size: 1.5vw;
+}
+
+.col .player1, .col .player2 {
+    width: 8vw;
+}
+
+.player img {
+    width: 7vw;
 }

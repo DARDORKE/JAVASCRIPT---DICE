@@ -21,11 +21,14 @@
          </a>
      </div>
      <div class="row align-items-center">
-         <div class="col player1">
-             <div>PLAYER 1<img src="images/dot-turn.svg" alt="dotTurn" style="width: 8vw;"></div>
+         <div class="col player">
+             <div>
+                 <span>PLAYER 1</span>
+                 <img src="images/dot-turn.svg" alt="dotTurn">
+             </div>
          </div>
-         <div class="col player2">
-             <div><img src="images/dot-turn.svg" alt="dotTurn" style="width: 8vw;visibility: hidden;">PLAYER 2</div>
+         <div class="col player">
+             <div><img src="images/dot-turn.svg" class="invisible" alt="dotTurn"">PLAYER 2</div>
              <div></div>
          </div>
      </div>
@@ -37,7 +40,9 @@
              <img
                      src="images/dice-6.svg"
                      alt="Dice-6"
-                     style="width: 8vw;"/>
+                     style="width: 8vw;"
+                     class="shadow-lg"
+             />
          </div>
          <div class="col cumulateScore text-danger">
              0
@@ -45,25 +50,27 @@
      </div>
      <div class="row row3">
          <div class="col">
-             <div class="p-2 bg-danger d-inline-block current">
+             <div class="p-2 bg-danger d-inline-block current shadow-lg">
                  <div class="currentText">CURRENT</div>
                  <div class="currentScore text-white">0</div>
              </div>
          </div>
-         <div class="col-2">
+         <div class="col-3">
              <div class="mb-3">
                  <a href="#" class="link-dark d-flex align-items-center justify-content-center buttons">
-                     <img src="images/roll.svg" alt="RollDice" class="buttonImg">&nbsp;&nbsp;ROLL DICE
+                     <img src="images/roll.svg" alt="RollDice" class="buttonImg">&nbsp;&nbsp;
+                     <span>ROLL DICE</span>
+
                  </a>
              </div>
              <div>
                  <a href="#" class="link-dark d-flex align-items-center justify-content-center buttons">
-                     <img src="images/hold.svg" alt="Hold" class="buttonImg">&nbsp;&nbsp;HOLD
+                     <img src="images/hold.svg" alt="Hold" class="buttonImg">&nbsp;&nbsp;<span>HOLD</span>
                  </a>
              </div>
          </div>
          <div class="col">
-             <div class="p-2 bg-danger d-inline-block current">
+             <div class="p-2 bg-danger d-inline-block current shadow-lg">
                  <div class="currentText">CURRENT</div>
                  <div class="currentScore text-white">0</div>
              </div>

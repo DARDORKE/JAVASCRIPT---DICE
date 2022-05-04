@@ -9,7 +9,7 @@ html, body {
 
 
 .container {
-    background: linear-gradient(to right, #f7f7f7 50%, white 50%);
+    background: white;
     text-align: center;
     max-width: 90vw;
     min-height: 95vh;
@@ -73,7 +73,7 @@ a {
 }
 
 .shake {
-    animation: shake 0.5s infinite;
+    animation: shake 0.2s infinite;
 }
 @keyframes shake {
     0%{
@@ -93,5 +93,5 @@ a {
 }
 
 span {
-    opacity: 80%;
+    opacity: 60%;
 }

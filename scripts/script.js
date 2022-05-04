@@ -18,6 +18,7 @@ function initGame(){
     document.getElementById('globalScoreP2').classList.remove('currentPlayer');
     document.getElementById('currentScoreP2').classList.remove('currentPlayer');
     document.getElementById('currentTextP2').classList.remove('currentPlayer');
+    container.style.background = 'linear-gradient(to right, #eeeeee 50%, white 50%)'; //Player 1 TURN
     startedGame = true;
 }
 
@@ -34,9 +35,12 @@ let players = [
     }
 ];
 
-
 //if currentPlayer = 0 -> Turn to player1 / currentPlayer = 1 -> Turn to player2
 let currentPlayer = 0;
+
+// BACKGROUND
+let container = document.getElementById('container');
+
 
 // Scores content
 let globalScoreP1 = document.getElementById('globalScoreP1');
@@ -62,26 +66,37 @@ rollButton.addEventListener('click', function (e){
     e.preventDefault();
     if(startedGame === true){
         let diceValue = Math.floor(Math.random() * 6) + 1;
-        dice.src = 'images/dice-'+ diceValue + '.svg';
-        if (diceValue === 1) {
-            players[currentPlayer].currentScore = 0;
-            document.getElementById('currentScoreP' + (currentPlayer+1)).innerText = players[currentPlayer].currentScore;
-            document.getElementById('dot' + (currentPlayer+1)).classList.add('invisible');
-            document.getElementById('playerName' + (currentPlayer+1)).classList.remove('currentPlayer');
-            document.getElementById('currentTextP' + (currentPlayer+1)).classList.remove('currentPlayer');
-            document.getElementById('globalScoreP' + (currentPlayer+1)).classList.remove('currentPlayer');
-            document.getElementById('currentScoreP' + (currentPlayer+1)).classList.remove('currentPlayer');
-            currentPlayer = + !currentPlayer;
-            document.getElementById('dot' + (currentPlayer+1)).classList.remove('invisible');
-            document.getElementById('playerName' + (currentPlayer+1)).classList.add('currentPlayer');
-            document.getElementById('currentTextP' + (currentPlayer+1)).classList.add('currentPlayer');
-            document.getElementById('globalScoreP' + (currentPlayer+1)).classList.add('currentPlayer');
-            document.getElementById('currentScoreP' + (currentPlayer+1)).classList.add('currentPlayer');
-        }
-        else {
-            players[currentPlayer].currentScore += diceValue;
-            document.getElementById('currentScoreP' + (currentPlayer+1)).innerText = players[currentPlayer].currentScore;
-        }
+        dice.classList.add('shake');
+        setTimeout(function() {
+            dice.src = 'images/dice-'+ diceValue + '.svg';
+            dice.classList.remove(('shake'));
+            if (diceValue === 1) {
+                players[currentPlayer].currentScore = 0;
+                document.getElementById('currentScoreP' + (currentPlayer+1)).innerText = players[currentPlayer].currentScore;
+                document.getElementById('dot' + (currentPlayer+1)).classList.add('invisible');
+                document.getElementById('playerName' + (currentPlayer+1)).classList.remove('currentPlayer');
+                document.getElementById('currentTextP' + (currentPlayer+1)).classList.remove('currentPlayer');
+                document.getElementById('globalScoreP' + (currentPlayer+1)).classList.remove('currentPlayer');
+                document.getElementById('currentScoreP' + (currentPlayer+1)).classList.remove('currentPlayer');
+                currentPlayer = + !currentPlayer;
+                if(currentPlayer === 0){
+                    container.style.background = 'linear-gradient(to right, #eeeeee 50%, white 50%)'; //Player 1 TURN
+                }
+                else {
+                    container.style.background = 'linear-gradient(to right, white 50%, #eeeeee 50%)'; //Player 2 TURN
+                }
+                document.getElementById('dot' + (currentPlayer+1)).classList.remove('invisible');
+                document.getElementById('playerName' + (currentPlayer+1)).classList.add('currentPlayer');
+                document.getElementById('currentTextP' + (currentPlayer+1)).classList.add('currentPlayer');
+                document.getElementById('globalScoreP' + (currentPlayer+1)).classList.add('currentPlayer');
+                document.getElementById('currentScoreP' + (currentPlayer+1)).classList.add('currentPlayer');
+            }
+            else {
+                players[currentPlayer].currentScore += diceValue;
+                document.getElementById('currentScoreP' + (currentPlayer+1)).innerText = players[currentPlayer].currentScore;
+            }
+        }, 1000);
+
     }
 });
 
@@ -97,7 +112,7 @@ holdButton.addEventListener('click', function (e){
         document.getElementById('currentScoreP' + (currentPlayer+1)).innerText = players[currentPlayer].currentScore;
         if(players[currentPlayer].globalScore >= 100){
             alert(players[currentPlayer].name + ' Wins This Game');
-            initGame();
+            window.location.reload();
         } else {
             document.getElementById('dot' + (currentPlayer+1)).classList.add('invisible');
             document.getElementById('playerName' + (currentPlayer+1)).classList.remove('currentPlayer');

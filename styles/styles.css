@@ -89,4 +89,9 @@ a {
 
 .currentPlayer {
     font-weight: 500;
+    opacity: 100%;
+}
+
+span {
+    opacity: 80%;
 }

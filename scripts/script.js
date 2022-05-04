@@ -23,12 +23,12 @@ function initGame(){
 
 let players = [
     {
-        name: 'player1',
+        name: 'PLAYER 1',
         currentScore : 0,
         globalScore : 0
     },
     {
-        name: 'player2',
+        name: 'PLAYER 2',
         currentScore : 0,
         globalScore : 0
     }
@@ -85,4 +85,31 @@ rollButton.addEventListener('click', function (e){
     }
 });
 
+//HOLD BUTTON
+let holdButton = document.getElementById('holdButton');
 
+holdButton.addEventListener('click', function (e){
+    e.preventDefault();
+    if((startedGame === true) && (players[currentPlayer].currentScore !== 0)){
+        players[currentPlayer].globalScore += players[currentPlayer].currentScore;
+        players[currentPlayer].currentScore = 0;
+        document.getElementById('globalScoreP' + (currentPlayer+1)).innerText = players[currentPlayer].globalScore;
+        document.getElementById('currentScoreP' + (currentPlayer+1)).innerText = players[currentPlayer].currentScore;
+        if(players[currentPlayer].globalScore >= 100){
+            alert(players[currentPlayer].name + ' Wins This Game');
+            initGame();
+        } else {
+            document.getElementById('dot' + (currentPlayer+1)).classList.add('invisible');
+            document.getElementById('playerName' + (currentPlayer+1)).classList.remove('currentPlayer');
+            document.getElementById('currentTextP' + (currentPlayer+1)).classList.remove('currentPlayer');
+            document.getElementById('globalScoreP' + (currentPlayer+1)).classList.remove('currentPlayer');
+            document.getElementById('currentScoreP' + (currentPlayer+1)).classList.remove('currentPlayer');
+            currentPlayer = + !currentPlayer;
+            document.getElementById('dot' + (currentPlayer+1)).classList.remove('invisible');
+            document.getElementById('playerName' + (currentPlayer+1)).classList.add('currentPlayer');
+            document.getElementById('currentTextP' + (currentPlayer+1)).classList.add('currentPlayer');
+            document.getElementById('globalScoreP' + (currentPlayer+1)).classList.add('currentPlayer');
+            document.getElementById('currentScoreP' + (currentPlayer+1)).classList.add('currentPlayer');
+        }
+    }
+})

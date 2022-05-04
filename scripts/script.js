@@ -26,6 +26,8 @@ function changeTurn() {
     document.getElementById('globalScoreP' + (currentPlayer+1)).classList.remove('currentPlayer');
     document.getElementById('currentScoreP' + (currentPlayer+1)).classList.remove('currentPlayer');
     currentPlayer = + !currentPlayer;
+    changeBackground();
+    currentPlayerStyle();
 }
 
 // CHANGE BACKGROUND
@@ -64,8 +66,6 @@ function roll() {
             players[currentPlayer].currentScore = 0;
             document.getElementById('currentScoreP' + (currentPlayer+1)).innerText = players[currentPlayer].currentScore;
             changeTurn();
-            changeBackground();
-            currentPlayerStyle();
         }
         else {
             players[currentPlayer].currentScore += diceValue;
@@ -85,8 +85,6 @@ function hold() {
         window.location.reload();
     } else {
         changeTurn();
-        changeBackground();
-        currentPlayerStyle();
     }
 }
 

@@ -23,20 +23,20 @@
      <div class="row align-items-center">
          <div class="col player">
              <div>
-                 <span>PLAYER 1</span>
-                 <img src="images/dot-turn.svg" alt="dotTurn" id="dotP1">
+                 <span id="playerName1">PLAYER 1</span>
+                 <img src="images/dot-turn.svg" alt="dotTurn" id="dot1">
              </div>
          </div>
          <div class="col player">
              <div>
-                 <img src="images/dot-turn.svg" alt="dotTurn" id="dotP2">
-                 <span>PLAYER 2</span>
+                 <img src="images/dot-turn.svg" alt="dotTurn" class="invisible" id="dot2">
+                 <span id="playerName2">PLAYER 2</span>
              </div>
          </div>
      </div>
      <div class="row row2 align-items-center">
-         <div class="col cumulateScore text-danger" id="globalScoreP1">
-             <span id="currentScore1">-</span>
+         <div class="col cumulateScore text-danger">
+             <span id="globalScoreP1">-</span>
          </div>
          <div class="col-2">
              <img
@@ -46,15 +46,19 @@
                      id="dice"
              />
          </div>
-         <div class="col cumulateScore text-danger" id="globalScoreP2">
-             <span id="currentScore2">-</span>
+         <div class="col cumulateScore text-danger">
+             <span id="globalScoreP2">-</span>
          </div>
      </div>
      <div class="row row3">
          <div class="col">
              <div class="p-2 bg-danger d-inline-block current shadow-lg">
-                 <div class="currentText">CURRENT</div>
-                 <div class="currentScore text-white" id="currentScoreP1">-</div>
+                 <div>
+                     <span class="currentText" id="currentTextP1">CURRENT</span>
+                 </div>
+                 <div class="currentScore text-white">
+                     <span id="currentScoreP1">-</span>
+                 </div>
              </div>
          </div>
          <div class="col-3">
@@ -73,8 +77,12 @@
          </div>
          <div class="col">
              <div class="p-2 bg-danger d-inline-block current shadow-lg">
-                 <div class="currentText">CURRENT</div>
-                 <div class="currentScore text-white"  id="currentScoreP2">-</div>
+                 <div>
+                     <span class="currentText" id="currentTextP2">CURRENT</span>
+                 </div>
+                 <div class="currentScore text-white">
+                    <span id="currentScoreP2">-</span>
+                 </div>
              </div>
          </div>
      </div>

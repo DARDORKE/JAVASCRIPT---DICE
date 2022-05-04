@@ -86,3 +86,7 @@ a {
         transform: rotate(8deg);
     }
 }
+
+.currentPlayer {
+    font-weight: 500;
+}

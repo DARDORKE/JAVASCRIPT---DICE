@@ -64,7 +64,7 @@ let dice = document.getElementById('dice');
 
 rollButton.addEventListener('click', function (e){
     e.preventDefault();
-    if(startedGame === true){
+    if((startedGame === true) && !(dice.classList.contains("shake"))){
         let diceValue = Math.floor(Math.random() * 6) + 1;
         dice.classList.add('shake');
         setTimeout(function() {
@@ -95,7 +95,7 @@ rollButton.addEventListener('click', function (e){
                 players[currentPlayer].currentScore += diceValue;
                 document.getElementById('currentScoreP' + (currentPlayer+1)).innerText = players[currentPlayer].currentScore;
             }
-        }, 1000);
+        }, 500);
 
     }
 });
@@ -105,7 +105,7 @@ let holdButton = document.getElementById('holdButton');
 
 holdButton.addEventListener('click', function (e){
     e.preventDefault();
-    if((startedGame === true) && (players[currentPlayer].currentScore !== 0)){
+    if((startedGame === true) && (players[currentPlayer].currentScore !== 0) && !(dice.classList.contains("shake"))){
         players[currentPlayer].globalScore += players[currentPlayer].currentScore;
         players[currentPlayer].currentScore = 0;
         document.getElementById('globalScoreP' + (currentPlayer+1)).innerText = players[currentPlayer].globalScore;
